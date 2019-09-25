@@ -8,9 +8,11 @@ function CompareCards(IDcarte1, IDcarte2) {
 function DisplayResponse(reponse) {
 	if (reponse) {
 		/* affichage du resultat correct (à changer) */
-		console.log("ok");
+		console.log("These are same cards");
+		document.getElementById("response_compare").innerHTML = "These are same cards";
 	} else {
 		/* affichage du resultat incorrect (à changer) */
-		console.log("no");
+		console.log("These aren't same cards");
+		document.getElementById("response_compare").innerHTML = "These aren't same cards";
 	}
 }
