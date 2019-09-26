@@ -1,0 +1,5 @@
+/* curseur cible */
+#id3,.personnages {
+    cursor: url(icon.ico) 32 32, pointer;
+    caret-color: red;
+}

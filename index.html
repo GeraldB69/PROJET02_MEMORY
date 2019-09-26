@@ -6,17 +6,20 @@
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<link rel="stylesheet" type="text/css" href="classroom.css" />
 		<link rel="stylesheet" type="text/css" href="count.css" />
+		<link rel="stylesheet" type="text/css" href="icon.css" />
 		<link
 			href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|Mansalva&display=swap"
 			rel="stylesheet"
 		/>
+        <link rel="stylesheet" href="modal.css">
 	</head>
 	<body>
         <h1>South Park memory game</h1>
         <audio id="audio1" src="Sounds/cartman-going-home.mp3" type="audio/mp3">
         </audio>
         <audio id="audio2" src="Sounds/mr-mackey-umkay.mp3" type="audio/mp3">
-        </audio>
+		</audio>
+		<a href= "#modal1" class="js-modal">Play in</a>
 		<div class="container">
 			<div id="Tableau_01">
 				<div id="id1_">
@@ -63,10 +66,10 @@
 					<img id="id13" src="images/13.gif" width="99" height="351" alt="" />
 				</div>
 				<div id="id14_">
-					<img id="id14" class="personnages" src="images/14.gif" width="85" height="115" alt="" />
+					<img id="id14" class="personnages son1" src="images/14.gif" width="85" height="115" alt="" />
 				</div>
 				<div id="id15_">
-					<img id="id15" class="personnages" src="images/15.gif" width="39" height="80" alt="" />
+					<img id="id15" class="personnages son2" src="images/15.gif" width="39" height="80" alt="" />
 				</div>
 				<div id="id16_">
 					<img id="id16" src="images/16.gif" width="62" height="10" alt="" />
@@ -75,19 +78,19 @@
 					<img id="id17" src="images/17.gif" width="65" height="67" alt="" />
 				</div>
 				<div id="id18_">
-					<img id="id18" class="personnages" src="images/18.gif" width="69" height="67" alt="" />
+					<img id="id18" class="personnages son3" src="images/18.gif" width="69" height="67" alt="" />
 				</div>
 				<div id="id19_">
 					<img id="id19" src="images/19.gif" width="332" height="14" alt="" />
 				</div>
 				<div id="id20_">
-					<img id="id20" class="personnages" src="images/20.png" width="62" height="42" alt="" />
+					<img id="id20" class="personnages son5" src="images/20.png" width="62" height="42" alt="" />
 				</div>
 				<div id="id21_">
 					<img id="id21" src="images/21.gif" width="9" height="38" alt="" />
 				</div>
 				<div id="id22_">
-					<img id="id22" class="personnages" src="images/22.gif" width="40" height="38" alt="" />
+					<img id="id22" class="personnages son8" src="images/22.gif" width="40" height="38" alt="" />
 				</div>
 				<div id="id23_">
 					<img id="id23" src="images/23.gif" width="6" height="101" alt="" />
@@ -96,16 +99,16 @@
 					<img id="id24" src="images/24.gif" width="21" height="337" alt="" />
 				</div>
 				<div id="id25_">
-					<img id="id25" class="personnages" src="images/25.gif" width="71" height="85" alt="" />
+					<img id="id25" class="personnages son1" src="images/25.gif" width="71" height="85" alt="" />
 				</div>
 				<div id="id26_">
-					<img id="id26" class="personnages" src="images/26.gif" width="68" height="85" alt="" />
+					<img id="id26" class="personnages son4" src="images/26.gif" width="68" height="85" alt="" />
 				</div>
 				<div id="id27_">
 					<img id="id27" src="images/27.gif" width="79" height="66" alt="" />
 				</div>
 				<div id="id28_">
-					<img id="id28" class="personnages" src="images/28.gif" width="66" height="66" alt="" />
+					<img id="id28" class="personnages son7" src="images/28.gif" width="66" height="66" alt="" />
 				</div>
 				<div id="id29_">
 					<img id="id29" src="images/29.gif" width="27" height="337" alt="" />
@@ -114,7 +117,7 @@
 					<img id="id30" src="images/30.gif" width="39" height="28" alt="" />
 				</div>
 				<div id="id31_">
-					<img id="id31" class="personnages" src="images/31.gif" width="45" height="72" alt="" />
+					<img id="id31" class="personnages son6" src="images/31.gif" width="45" height="72" alt="" />
 				</div>
 				<div id="id32_">
 					<img id="id32" src="images/32.gif" width="27" height="63" alt="" />
@@ -123,10 +126,10 @@
 					<img id="id33" src="images/33.gif" width="92" height="48" alt="" />
 				</div>
 				<div id="id34_">
-					<img id="id34" class="personnages" src="images/34.gif" width="43" height="82" alt="" />
+					<img id="id34" class="personnages son2" src="images/34.gif" width="43" height="82" alt="" />
 				</div>
 				<div id="id35_">
-					<img id="id35" class="personnages" src="images/35.gif" width="69" height="82" alt="" />
+					<img id="id35" class="personnages son4" src="images/35.gif" width="69" height="82" alt="" />
 				</div>
 				<div id="id36_">
 					<img id="id36" src="images/36.gif" width="46" height="284" alt="" />
@@ -138,7 +141,7 @@
 					<img id="id38" src="images/38.gif" width="45" height="271" alt="" />
 				</div>
 				<div id="id39_">
-					<img id="id39" class="personnages" src="images/39.gif" width="85" height="95" alt="" />
+					<img id="id39" class="personnages son6" src="images/39.gif" width="85" height="95" alt="" />
 				</div>
 				<div id="id40_">
 					<img id="id40" src="images/40.gif" width="15" height="271" alt="" />
@@ -150,7 +153,7 @@
 					<img id="id42" src="images/42.gif" width="25" height="236" alt="" />
 				</div>
 				<div id="id43_">
-					<img id="id43" class="personnages" src="images/43.gif" width="93" height="122" alt="" />
+					<img id="id43" class="personnages son5" src="images/43.gif" width="93" height="122" alt="" />
 				</div>
 				<div id="id44_">
 					<img id="id44" src="images/44.gif" width="36" height="236" alt="" />
@@ -159,13 +162,13 @@
 					<img id="id45" src="images/45.gif" width="85" height="236" alt="" />
 				</div>
 				<div id="id46_">
-					<img id="id46" class="personnages" src="images/46.gif" width="52" height="92" alt="" />
+					<img id="id46" class="personnages son7" src="images/46.gif" width="52" height="92" alt="" />
 				</div>
 				<div id="id47_">
 					<img id="id47" src="images/47.gif" width="12" height="236" alt="" />
 				</div>
 				<div id="id48_">
-					<img id="id48" class="personnages" src="images/48.gif" width="61" height="92" alt="" />
+					<img id="id48" class="personnages son3" src="images/48.gif" width="61" height="92" alt="" />
 				</div>
 				<div id="id49_">
 					<img id="id49" src="images/49.gif" width="45" height="83" alt="" />
@@ -180,7 +183,7 @@
 					<img id="id52" src="images/52.gif" width="39" height="144" alt="" />
 				</div>
 				<div id="id53_">
-					<img id="id53" class="personnages" src="images/53.gif" width="84" height="112" alt="" />
+					<img id="id53" class="personnages son8" src="images/53.gif" width="84" height="112" alt="" />
 				</div>
 				<div id="id54_">
 					<img id="id54" src="images/54.gif" width="52" height="144" alt="" />
@@ -198,5 +201,47 @@
         </div>
 		<script src="audio.js" ></script>
 		<script type="text/javascript" src="count.js"></script>
+		</div>
+<!------------------------------------------------START SECTION MODAL------------------------------------------------>
+		<section class="sectionModal">
+        	<aside id ="modal1" class = "modal" aria-hidden = "true" role = "dialog" aria-labelledby="titleModal" style="display:none">
+                <div class = "modal-wrapper js-modal-stop">
+					<div class="div_buttonClose">
+						<button class="js-modal-close buttonClose">X</button>
+					</div>
+                    <form action="virtuel.php" method="POST" class="form_main">
+						<h1 class="form_h1">PLAYERS :</h1>
+						<div class="form_container">
+							<div class="form_player1">
+								<input class="input_user" type="text" name="player_name" placeholder="Your username">
+								<fieldset>
+									<legend>Your sexe :</legend>
+									<input type="radio" name="user_sexe_m1" id="radio_m1">
+									<label for="radio_m1">Man.</label>
+									<input type="radio" name="user_sexe_f1" id="radio_f1">
+									<label for="radio_f1">Female.</label>
+								</fieldset>
+							</div>
+							<div class="form_player2">
+								<input class="input_user" type="text" name="player_name" placeholder="Your username">
+								<fieldset>
+									<legend>Your sexe :</legend>
+									<input type="radio" name="user_sexe_m2" id="radio_m2">
+									<label for="radio_m2">Man.</label>
+									<input type="radio" name="user_sexe_f2" id="radio_f2">
+									<label for="radio_f2">Female.</label>
+								</fieldset>
+							</div>
+						</div>
+                    </form>
+                </div>
+        	</aside>
+		</section>
+<!------------------------------------------------END SECTION MODAL------------------------------------------------>
+
+		
+		<script src="modal.js">
+        
+        </script>
 	</body>
 </html>
