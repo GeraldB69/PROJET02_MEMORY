@@ -7,6 +7,8 @@ const audio6 = document.getElementById("audio6");
 const audio7 = document.getElementById("audio7");
 const audio8 = document.getElementById("audio8");
 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Tableau contenant les 8 paires de son à lire !
+
 const audios = [
 	audio1,
 	audio2,
@@ -25,6 +27,22 @@ const audios = [
 	audio7,
 	audio8
 ];
+//console.log(audios);
+
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Melange le tableau de son !
+function shuffle(array) {
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
+	return array;
+}
+
+//shuffle(audios);
+
+//console.log(audios);
+let idBonhommesFound = new Array();
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Tableau regroupant les <div> des bonhommes
 const idBonhommes = [
 	"id14",
 	"id15",
@@ -44,38 +62,51 @@ const idBonhommes = [
 	"id53"
 ];
 
-let soundPlayed1 = 0;
-let soundPlayed2 = 0;
-let idBonhommesPlayed = 0;
-//let idBonhommesPlayed2 = 0;
+let soundPlayed1 = 0; // Pour enregistrer le premier son joué
+let soundPlayed2 = 0; // pour le second
+let idBonhommesPlayed = 0; //pour enregistrer le bonhomme cliqué
+let player = 1; // pour passer d'un joueur à l'autre
 
 for (let i = 0; i < idBonhommes.length; i++) {
 	const img = document.getElementById(idBonhommes[i]);
 	img.addEventListener("click", function() {
 		audios[i].play();
 		console.log(audios[i].id);
-		//console.log(idBonhommes[i]);
 
 		if (idBonhommesPlayed != idBonhommes[i]) {
-			idBonhommesPlayed = idBonhommes[i];
-
 			if (soundPlayed1 === 0) {
 				soundPlayed1 = audios[i].id;
-
-				//console.log(soundPlayed1);
 			} else if (soundPlayed2 === 0) {
 				soundPlayed2 = audios[i].id;
-				//console.log(soundPlayed2);
 
 				console.log(CompareCards(soundPlayed1, soundPlayed2));
 
-				if (CompareCards(soundPlayed1, soundPlayed2) === true)
-					pointPlus(CompareCards(soundPlayed1, soundPlayed2));
+				if (CompareCards(soundPlayed1, soundPlayed2) === true) {
+					if (player % 2 != 0) {
+						pointPlus1(CompareCards(soundPlayed1, soundPlayed2));
+					} else pointPlus2(CompareCards(soundPlayed1, soundPlayed2));
+
+					//console.log(idBonhommesPlayed);
+					let BonhommesFounds = idBonhommesFound.push(idBonhommes[i]);
+					BonhommesFounds = idBonhommesFound.push(idBonhommesPlayed);
+
+					console.log(idBonhommesFound);
+				}
 
 				soundPlayed2 = 0;
 				soundPlayed1 = 0;
 				idBonhommesPlayed = 0;
+				playerWhoHaveToPlay(player); // fonction affichant le joueur à qui c'est le tour !
+				for (let l = 0; l < idBonhommesFound.length; l++) {
+					let tacheDeSang = document.getElementById(`${idBonhommesFound[l]}_`);
+					let image = idBonhommesFound[l].slice(2);
+					tacheDeSang.innerHTML = `<img src="images/${image}.gif" style="z-index:1;"><img src="images/blood.png" width="50" style="position:absolute;left:30%;top:15px; z-index:2; ">`;
+					console.log(tacheDeSang);
+				}
+
+				player++;
 			}
+			idBonhommesPlayed = idBonhommes[i];
 		}
 	});
 }
