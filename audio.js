@@ -7,10 +7,56 @@ const audio6 = document.getElementById("audio6");
 const audio7 = document.getElementById("audio7");
 const audio8 = document.getElementById("audio8");
 
-const img1 = document.getElementById("id14");
+const audios = [
+	audio1,
+	audio2,
+	audio3,
+	audio4,
+	audio5,
+	audio6,
+	audio7,
+	audio8,
+	audio1,
+	audio2,
+	audio3,
+	audio4,
+	audio5,
+	audio6,
+	audio7,
+	audio8
+];
+const idBonhommes = [
+	"id14",
+	"id15",
+	"id18",
+	"id20",
+	"id22",
+	"id25",
+	"id26",
+	"id28",
+	"id31",
+	"id34",
+	"id35",
+	"id39",
+	"id43",
+	"id46",
+	"id48",
+	"id53"
+];
+
+for (let i = 0; i < idBonhommes.length; i++) {
+	const img = document.getElementById(idBonhommes[i]);
+	img.addEventListener("click", function() {
+		audios[i].play();
+		console.log(audios[i].id);
+		console.log(idBonhommes[i]);
+	});
+}
+
+/* const img1 = document.getElementById("id14");
 img1.addEventListener("click", function() {
 	audio1.play();
-	console.log(audio1.getElementById(id));
+	console.log(audio1.id);
 });
 
 const img2 = document.getElementById("id15");
@@ -87,3 +133,4 @@ const img16 = document.getElementById("id53");
 img16.addEventListener("click", function() {
 	audio8.play();
 });
+ */
