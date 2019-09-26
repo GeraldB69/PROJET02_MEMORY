@@ -5,10 +5,12 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<link rel="stylesheet" type="text/css" href="classroom.css" />
+		<link rel="stylesheet" type="text/css" href="icon.css" />
 		<link
 			href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|Mansalva&display=swap"
 			rel="stylesheet"
 		/>
+        <link rel="stylesheet" href="modal.css">
 	</head>
 	<body>
         <h1>South Park memory game</h1>
@@ -28,6 +30,8 @@
         </audio>
         <audio id="audio8" src="Sounds/mr-mackey-umkay.mp3" type="audio/mp3">
         </audio>
+		</audio>
+		<a href= "#modal1" class="js-modal">Play in</a>
 		<div class="container">
 			<div id="Tableau_01">
 				<div id="id1_">
@@ -202,7 +206,47 @@
 					<img id="id57" src="images/57.gif" width="84" height="32" alt="" />
 				</div>
 			</div>
-        </div>
-        <script src="audio.js" ></script>
+		</div>
+<!------------------------------------------------START SECTION MODAL------------------------------------------------>
+		<section class="sectionModal">
+        	<aside id ="modal1" class = "modal" aria-hidden = "true" role = "dialog" aria-labelledby="titleModal" style="display:none">
+                <div class = "modal-wrapper js-modal-stop">
+					<div class="div_buttonClose">
+						<button class="js-modal-close buttonClose">X</button>
+					</div>
+                    <form action="virtuel.php" method="POST" class="form_main">
+						<h1 class="form_h1">PLAYERS :</h1>
+						<div class="form_container">
+							<div class="form_player1">
+								<input class="input_user" type="text" name="player_name" placeholder="Your username">
+								<fieldset>
+									<legend>Your sexe :</legend>
+									<input type="radio" name="user_sexe_m1" id="radio_m1">
+									<label for="radio_m1">Man.</label>
+									<input type="radio" name="user_sexe_f1" id="radio_f1">
+									<label for="radio_f1">Female.</label>
+								</fieldset>
+							</div>
+							<div class="form_player2">
+								<input class="input_user" type="text" name="player_name" placeholder="Your username">
+								<fieldset>
+									<legend>Your sexe :</legend>
+									<input type="radio" name="user_sexe_m2" id="radio_m2">
+									<label for="radio_m2">Man.</label>
+									<input type="radio" name="user_sexe_f2" id="radio_f2">
+									<label for="radio_f2">Female.</label>
+								</fieldset>
+							</div>
+						</div>
+                    </form>
+                </div>
+        	</aside>
+		</section>
+<!------------------------------------------------END SECTION MODAL------------------------------------------------>
+
+		<script src="audio.js" ></script>
+		<script src="modal.js">
+        
+        </script>
 	</body>
 </html>
