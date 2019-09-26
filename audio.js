@@ -74,8 +74,6 @@ for (let i = 0; i < idBonhommes.length; i++) {
 		console.log(audios[i].id);
 
 		if (idBonhommesPlayed != idBonhommes[i]) {
-			idBonhommesPlayed = idBonhommes[i];
-
 			if (soundPlayed1 === 0) {
 				soundPlayed1 = audios[i].id;
 			} else if (soundPlayed2 === 0) {
@@ -88,8 +86,9 @@ for (let i = 0; i < idBonhommes.length; i++) {
 						pointPlus1(CompareCards(soundPlayed1, soundPlayed2));
 					} else pointPlus2(CompareCards(soundPlayed1, soundPlayed2));
 
-					console.log(idBonhommesPlayed);
-					let BonhommesFounds = idBonhommesFound.push(idBonhommesPlayed);
+					//console.log(idBonhommesPlayed);
+					let BonhommesFounds = idBonhommesFound.push(idBonhommes[i]);
+					BonhommesFounds = idBonhommesFound.push(idBonhommesPlayed);
 
 					console.log(idBonhommesFound);
 				}
@@ -97,10 +96,11 @@ for (let i = 0; i < idBonhommes.length; i++) {
 				soundPlayed2 = 0;
 				soundPlayed1 = 0;
 				idBonhommesPlayed = 0;
-				playerWhoHaveToPlay(player);
+				playerWhoHaveToPlay(player); // fonction affichant le joueur à qui c'est le tour !
 
 				player++;
 			}
+			idBonhommesPlayed = idBonhommes[i];
 		}
 	});
 }
