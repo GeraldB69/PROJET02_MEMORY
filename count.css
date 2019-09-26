@@ -1,0 +1,27 @@
+.countcontainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    width: 285px;
+    height: 195px;
+    font-size: 20px;
+}
+
+#score1{
+    width: 280px;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    line-height: 1.3em;
+}
+
+#score2{
+    position: absolute;
+    top: 80px;
+    left: 30px;
+    width: 280px;
+    line-height: 1.3em;
+}
