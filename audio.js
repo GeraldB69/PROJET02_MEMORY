@@ -25,6 +25,21 @@ const audios = [
 	audio7,
 	audio8
 ];
+//console.log(audios);
+function shuffle(array) {
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+		//console.log(array[i], " ", array[j]);
+	}
+	return array;
+}
+
+//shuffle(audios);
+
+//console.log(audios);
+let idBonhommesFound = new Array(10);
+
 const idBonhommes = [
 	"id14",
 	"id15",
@@ -47,6 +62,7 @@ const idBonhommes = [
 let soundPlayed1 = 0;
 let soundPlayed2 = 0;
 let idBonhommesPlayed = 0;
+let player = 1;
 //let idBonhommesPlayed2 = 0;
 
 for (let i = 0; i < idBonhommes.length; i++) {
@@ -54,6 +70,7 @@ for (let i = 0; i < idBonhommes.length; i++) {
 	img.addEventListener("click", function() {
 		audios[i].play();
 		console.log(audios[i].id);
+
 		//console.log(idBonhommes[i]);
 
 		if (idBonhommesPlayed != idBonhommes[i]) {
@@ -69,12 +86,21 @@ for (let i = 0; i < idBonhommes.length; i++) {
 
 				console.log(CompareCards(soundPlayed1, soundPlayed2));
 
-				if (CompareCards(soundPlayed1, soundPlayed2) === true)
-					pointPlus(CompareCards(soundPlayed1, soundPlayed2));
+				if (CompareCards(soundPlayed1, soundPlayed2) === true) {
+					if (player % 2 != 0) {
+						pointPlus1(CompareCards(soundPlayed1, soundPlayed2));
+					} else pointPlus2(CompareCards(soundPlayed1, soundPlayed2));
+
+					console.log(idBonhommesPlayed);
+					let BonhommesFounds = idBonhommesFound.push(idBonhommesPlayed);
+
+					console.log(idBonhommesFound);
+				}
 
 				soundPlayed2 = 0;
 				soundPlayed1 = 0;
 				idBonhommesPlayed = 0;
+				player++;
 			}
 		}
 	});
