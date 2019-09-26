@@ -53,12 +53,23 @@ for (let i = 0; i < idBonhommes.length; i++) {
 		audios[i].play();
 		console.log(audios[i].id);
 		//console.log(idBonhommes[i]);
+
 		if (soundPlayed1 === 0) {
 			soundPlayed1 = audios[i].id;
-			console.log(soundPlayed1);
+			//console.log(soundPlayed1);
 		} else if (soundPlayed2 === 0) {
 			soundPlayed2 = audios[i].id;
-			console.log(soundPlayed2);
+			//console.log(soundPlayed2);
+
+			console.log(CompareCards(soundPlayed1, soundPlayed2));
+			soundPlayed2 = 0;
+			soundPlayed1 = 0;
 		}
 	});
+}
+
+/* Fonction de comparaison des 2 identifiants de carte */
+function CompareCards(IDcarte1, IDcarte2) {
+	if (IDcarte1 === IDcarte2) return true;
+	else return false;
 }
