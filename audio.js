@@ -46,6 +46,8 @@ const idBonhommes = [
 
 let soundPlayed1 = 0;
 let soundPlayed2 = 0;
+let idBonhommesPlayed = 0;
+//let idBonhommesPlayed2 = 0;
 
 for (let i = 0; i < idBonhommes.length; i++) {
 	const img = document.getElementById(idBonhommes[i]);
@@ -54,16 +56,26 @@ for (let i = 0; i < idBonhommes.length; i++) {
 		console.log(audios[i].id);
 		//console.log(idBonhommes[i]);
 
-		if (soundPlayed1 === 0) {
-			soundPlayed1 = audios[i].id;
-			//console.log(soundPlayed1);
-		} else if (soundPlayed2 === 0) {
-			soundPlayed2 = audios[i].id;
-			//console.log(soundPlayed2);
+		if (idBonhommesPlayed != idBonhommes[i]) {
+			idBonhommesPlayed = idBonhommes[i];
 
-			console.log(CompareCards(soundPlayed1, soundPlayed2));
-			soundPlayed2 = 0;
-			soundPlayed1 = 0;
+			if (soundPlayed1 === 0) {
+				soundPlayed1 = audios[i].id;
+
+				//console.log(soundPlayed1);
+			} else if (soundPlayed2 === 0) {
+				soundPlayed2 = audios[i].id;
+				//console.log(soundPlayed2);
+
+				console.log(CompareCards(soundPlayed1, soundPlayed2));
+
+				if (CompareCards(soundPlayed1, soundPlayed2) === true)
+					pointPlus(CompareCards(soundPlayed1, soundPlayed2));
+
+				soundPlayed2 = 0;
+				soundPlayed1 = 0;
+				idBonhommesPlayed = 0;
+			}
 		}
 	});
 }
