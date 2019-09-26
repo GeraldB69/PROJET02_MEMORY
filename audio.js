@@ -7,6 +7,8 @@ const audio6 = document.getElementById("audio6");
 const audio7 = document.getElementById("audio7");
 const audio8 = document.getElementById("audio8");
 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Tableau contenant les 8 paires de son à lire !
+
 const audios = [
 	audio1,
 	audio2,
@@ -26,11 +28,12 @@ const audios = [
 	audio8
 ];
 //console.log(audios);
+
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Melange le tableau de son !
 function shuffle(array) {
 	for (let i = array.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
 		[array[i], array[j]] = [array[j], array[i]];
-		//console.log(array[i], " ", array[j]);
 	}
 	return array;
 }
@@ -38,8 +41,8 @@ function shuffle(array) {
 //shuffle(audios);
 
 //console.log(audios);
-let idBonhommesFound = new Array(10);
-
+let idBonhommesFound = new Array();
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Tableau regroupant les <div> des bonhommes
 const idBonhommes = [
 	"id14",
 	"id15",
@@ -59,11 +62,10 @@ const idBonhommes = [
 	"id53"
 ];
 
-let soundPlayed1 = 0;
-let soundPlayed2 = 0;
-let idBonhommesPlayed = 0;
-let player = 1;
-//let idBonhommesPlayed2 = 0;
+let soundPlayed1 = 0; // Pour enregistrer le premier son joué
+let soundPlayed2 = 0; // pour le second
+let idBonhommesPlayed = 0; //pour enregistrer le bonhomme cliqué
+let player = 1; // pour passer d'un joueur à l'autre
 
 for (let i = 0; i < idBonhommes.length; i++) {
 	const img = document.getElementById(idBonhommes[i]);
@@ -71,18 +73,13 @@ for (let i = 0; i < idBonhommes.length; i++) {
 		audios[i].play();
 		console.log(audios[i].id);
 
-		//console.log(idBonhommes[i]);
-
 		if (idBonhommesPlayed != idBonhommes[i]) {
 			idBonhommesPlayed = idBonhommes[i];
 
 			if (soundPlayed1 === 0) {
 				soundPlayed1 = audios[i].id;
-
-				//console.log(soundPlayed1);
 			} else if (soundPlayed2 === 0) {
 				soundPlayed2 = audios[i].id;
-				//console.log(soundPlayed2);
 
 				console.log(CompareCards(soundPlayed1, soundPlayed2));
 
@@ -100,6 +97,8 @@ for (let i = 0; i < idBonhommes.length; i++) {
 				soundPlayed2 = 0;
 				soundPlayed1 = 0;
 				idBonhommesPlayed = 0;
+				playerWhoHaveToPlay(player);
+
 				player++;
 			}
 		}
