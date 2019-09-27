@@ -27,8 +27,8 @@ function playerWhoHaveToPlay(player) {
 	console.log(`player : ${player}`);
 
 	if (player % 2 === 0) {
-		haveToPlay.innerHTML = `It's ${name1}'s turn`;
+		haveToPlay.innerHTML = `It's<br> <span style="font-size:30px">${name1}'s</span><br> turn`;
 	} else {
-		haveToPlay.innerHTML = `It's ${name2}'s turn`;
+		haveToPlay.innerHTML = `It's<br> <span style="font-size:30px">${name2}'s</span><br> turn`;
 	}
 }
