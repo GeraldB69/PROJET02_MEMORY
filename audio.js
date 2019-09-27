@@ -91,6 +91,10 @@ for (let i = 0; i < idBonhommes.length; i++) {
 					BonhommesFounds = idBonhommesFound.push(idBonhommesPlayed);
 					player--;
 					console.log(idBonhommesFound);
+					if (idBonhommesFound.length === 16) {
+						console.log("gagné");
+						gagne();
+					}
 				}
 
 				soundPlayed2 = 0;
@@ -115,4 +119,8 @@ for (let i = 0; i < idBonhommes.length; i++) {
 function CompareCards(IDcarte1, IDcarte2) {
 	if (IDcarte1 === IDcarte2) return true;
 	else return false;
+}
+
+function gagne() {
+	document.body.innerHTML = `<div style="with:100%; text-align:center; color:deeppink; font-size:80px; margin-top:50px;"><a href="index.html" style="text-decoration:none;  color:deeppink;">You WIN</a></div>`;
 }
