@@ -171,7 +171,9 @@ legend {
 	padding: 0;
 	text-align: center;
 }
-
+.open_modal {
+	cursor: pointer;
+}
 @media only screen and (max-width: 961px) {
 	.form_container {
 		display: flex;
