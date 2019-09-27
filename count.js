@@ -1,8 +1,8 @@
 let countPlayer1 = document.getElementById("score1");
 let countPlayer2 = document.getElementById("score2");
 
-let name1 = "joueur 1";
-let name2 = "joueur 2";
+let name1 = "player 1";
+let name2 = "player 2";
 
 countPlayer1.innerHTML = "Score <br>" + name1 + " : 0";
 countPlayer2.innerHTML = "Score <br>" + name2 + " : 0";
