@@ -100,7 +100,7 @@ for (let i = 0; i < idBonhommes.length; i++) {
 				for (let l = 0; l < idBonhommesFound.length; l++) {
 					let tacheDeSang = document.getElementById(`${idBonhommesFound[l]}_`);
 					let image = idBonhommesFound[l].slice(2);
-					tacheDeSang.innerHTML = `<img src="images/${image}.gif" style="z-index:1;"><img src="images/blood.png" width="50" style="position:absolute;left:30%;top:15px; z-index:2; ">`;
+					tacheDeSang.innerHTML = `<img src="images/${image}.gif" style="z-index:1;"><img src="images/blood.png" width="70" style="position:absolute;left:20%;top:15px; z-index:2; ">`;
 					console.log(tacheDeSang);
 				}
 
