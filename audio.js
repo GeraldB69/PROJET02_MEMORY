@@ -89,7 +89,7 @@ for (let i = 0; i < idBonhommes.length; i++) {
 					//console.log(idBonhommesPlayed);
 					let BonhommesFounds = idBonhommesFound.push(idBonhommes[i]);
 					BonhommesFounds = idBonhommesFound.push(idBonhommesPlayed);
-
+					player--;
 					console.log(idBonhommesFound);
 				}
 
