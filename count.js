@@ -1,8 +1,12 @@
+let name1 = "Player 1";
+let name2 = "Player 2";
 let countPlayer1 = document.getElementById("score1");
 let countPlayer2 = document.getElementById("score2");
 
-let name1 = "player 1";
-let name2 = "player 2";
+function putNames(name1,name2) {
+	countPlayer1.innerHTML = "Score <br>" + name1 + " : " + count1;
+	countPlayer2.innerHTML = "Score <br>" + name2 + " : " + count2;
+}
 
 countPlayer1.innerHTML = "Score <br>" + name1 + " : 0";
 countPlayer2.innerHTML = "Score <br>" + name2 + " : 0";
