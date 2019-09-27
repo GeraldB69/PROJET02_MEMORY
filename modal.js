@@ -1,4 +1,7 @@
+const names = [];
+const genders = [];
 let modal = null;
+
 
 const openModal = function (e) {
     e.preventDefault()
@@ -37,3 +40,22 @@ window.addEventListener("keydown", function (e) {
         closeModal(e)
     }
 })
+
+ 
+window.addEventListener("keydown", function (e) {
+    play = document.querySelectorAll(".button_play")
+    if (e.key === "Enter") {
+        closeModal(e)
+    }
+})
+
+document.querySelectorAll(".button_play").forEach(a =>{
+    a.addEventListener('click', closeModal)
+})
+
+function getInfos () {
+    let name1 = document.getElementById("name1").value;
+    let name2 = document.getElementById("name2").value;
+    
+    putNames(name1,name2);
+}
