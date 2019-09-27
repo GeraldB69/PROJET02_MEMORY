@@ -7,6 +7,10 @@ function putNames(name1,name2) {
 	countPlayer1.innerHTML = "Score <br>" + name1 + " : " + count1;
 	countPlayer2.innerHTML = "Score <br>" + name2 + " : " + count2;
 }
+function genders(g1,g2) { // permet de récupérer le genre... à développer
+	g1 = g1;
+	g2 = g2;
+}
 
 countPlayer1.innerHTML = "Score <br>" + name1 + " : 0";
 countPlayer2.innerHTML = "Score <br>" + name2 + " : 0";

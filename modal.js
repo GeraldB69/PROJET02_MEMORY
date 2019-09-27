@@ -64,6 +64,7 @@ function getInfos() {
     const g1 = m1 === true ? "M" : "F";
     const g2 = m2 === true ? "M" : "F";
     putNames(name1, name2); // mise à jour des noms sur le tableau
+    genders(g1,g2);
 }
 
 // ---------------------------------- modale burger
