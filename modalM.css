@@ -1,0 +1,60 @@
+body, html {
+    padding: 0;
+    margin : 0;
+	color: #f7f3f0;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.modalBack {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+	background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn .2s both;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.modalFirst {
+    overflow: auto;
+    width: 600px;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 20px);
+    padding: 20px;
+    background-image: url("tableauNoir.jpg");
+	background-repeat: no-repeat;
+    animation: slideFromTop .2s both;
+    font-size: 2em;
+}
+
+@keyframes slideFromTop {
+    from {transform: translateY(-50px);}
+    to {transform: translateX(0);}
+}
+
+.modalFirst {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.divButtonForFlex {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
