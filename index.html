@@ -12,6 +12,9 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="modal.css" />
+		<link rel="stylesheet" href="modalW.css">
+		<link rel="stylesheet" href="modalM.css">
+
 	</head>
 	<body>
 		<h1>South Park memory game</h1>
@@ -227,7 +230,8 @@
 			</div>
 		</div>
 
-		<!--START SECTION MODAL-->
+		<!-- START SECTION MODAL -->
+
 		<section class="sectionModal">
 			<aside
 				id="modal1"
@@ -288,7 +292,12 @@
 				</div>
 			</aside>
 		</section>
-		<!------------------------------------------------END SECTION MODAL------------------------------------------------>
+
+		<!-- END SECTION MODAL -->
+
+		<!-- START SECTION BURGER -->
+
+
 		<div class="modal" id="burgerMenu">
 			<img
 				src="images/burger_confection.jpg"
@@ -303,8 +312,52 @@
 				Close Burger menu
 			</button>
 		</div>
+
+		<!-- END SECTION BURGER -->
+
+		<!-- START SECTION MODALWOMAN -->
+
+		<section class="sectionModalWoman">
+			<a href="#linkModalW" class="linkModalJsW">if the Woman wins</a>
+        	<aside id="linkModalW" class="modalBack" role="dialog" style="display:none;">
+            	<div class="modalFirst modalStopPropagationJsW">
+                	<div class="divButtonForFlex">
+                    	<button class="buttonCloseJs">X</button>
+                	</div>
+                	<h1 class="titleModal">User, you win !</h1>
+                	img src="Woman.gif"/>
+                	<p>NOW lazy, go clean up !</p>
+            	</div>
+        	</aside>
+		</section>
+
+		<!-- END SECTION MODALWOMAN -->
+
+		<!-- START SECTION MODALMAN -->
+
+		<section class="sectionModalMan">
+			<a href="#linkModalM" class="linkModalJsM">if the Man wins</a>
+        	<aside id="linkModalM" class="modalBack" role="dialog" style="display:none;">
+            	<div class="modalFirst modalStopPropagationJsM">
+                	<div class="divButtonForFlex">
+                    	<button class="buttonCloseJs">X</button>
+                	</div>
+                	<h1 class="titleModal">User is a WINNER !</h1>
+                	<img src="Men.gif"/>
+                	<p>You're so perfect ! Congratulations !</p>
+            	</div>
+			</aside>
+		</section>
+
+
+		<!-- END SECTION MODALMAN -->
+
+
 		<script type="text/javascript" src="count.js"></script>
 		<script src="audio.js"></script>
 		<script src="modal.js"></script>
+		<script src="modalW.js"></script>
+        <script src="modalM.js"></script>
+		
 	</body>
 </html>
