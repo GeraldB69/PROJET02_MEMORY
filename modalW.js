@@ -5,8 +5,8 @@ const openModals = function (e) {
     target.style.display = null
     modal = target
     modal.addEventListener("click", closeModals)
-    modal.querySelector(".buttonCloseJs").addEventListener("click", closeModals)
-    modal.querySelector(".modalStopPropagationJs").addEventListener("click", stopPropagation)
+    modal.querySelector(".buttonCloseJsW").addEventListener("click", closeModals)
+    modal.querySelector(".modalStopPropagationJsW").addEventListener("click", stopPropagation)
 }
 
 const closeModals = function (e) {
@@ -15,7 +15,7 @@ const closeModals = function (e) {
     modal.style.display = "none"
     modal.removeEventListener("click", closeModals)
     modal.querySelector(".buttonCloseJs").removeEventListener("click", closeModals)
-    modal.querySelector(".modalStopPropagationJs").removeEventListener("click", stopPropagation)
+    modal.querySelector(".modalStopPropagationJsW").removeEventListener("click", stopPropagation)
     modal = null
 }
 
@@ -24,7 +24,7 @@ const stopPropagation = function (e) {
 }
 
 
-document.querySelectorAll(".linkModalJs").forEach(a => {
+document.querySelectorAll(".linkModalJsW").forEach(a => {
     a.addEventListener("click", openModals)
 })
 
