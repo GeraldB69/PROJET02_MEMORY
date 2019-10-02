@@ -38,7 +38,9 @@ function shuffle(array) {
 	return array;
 }
 
-//shuffle(audios);
+shuffle(audios);
+
+
 
 //console.log(audios);
 let idBonhommesFound = new Array();
