@@ -7,35 +7,46 @@
 		<link rel="stylesheet" type="text/css" href="classroom.css" />
 		<link rel="stylesheet" type="text/css" href="count.css" />
 		<link rel="stylesheet" type="text/css" href="icon.css" />
+		<link rel="stylesheet" type="text/css" href="animation.css" />
 		<link
 			href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|Mansalva&display=swap"
 			rel="stylesheet"
 		/>
-        <link rel="stylesheet" href="modal.css">
+		<link rel="stylesheet" href="modal.css" />
 	</head>
 	<body>
-        <h1>South Park memory game</h1>
-        <audio id="audio1" src="Sounds/alcohol.mp3" type="audio/mp3">
-        </audio>
-        <audio id="audio2" src="Sounds/busdriver.mp3" type="audio/mp3">
-        </audio>
-        <audio id="audio3" src="Sounds/cartman-going-home.mp3" type="audio/mp3">
-        </audio>
-        <audio id="audio4" src="Sounds/cartman-wendy-bitch.mp3" type="audio/mp3">
-        </audio>
-        <audio id="audio5" src="Sounds/garrison_fag.mp3" type="audio/mp3">
-        </audio>
-        <audio id="audio6" src="Sounds/grampalazyass.mp3" type="audio/mp3">
-        </audio>
-        <audio id="audio7" src="Sounds/killedkenny.mp3" type="audio/mp3">
-        </audio>
-        <audio id="audio8" src="Sounds/timmy_note.mp3" type="audio/mp3">
-        </audio>
-		</audio>
-		<div id="buttonPlayIn" style="position: absolute; top:10px; left : 10px; background-color:greenyellow;padding:15px; border-radius:5px; border: deeppink solid 2px;color:deeppink;"><a href= "#modal1" class="js-modal">Play in</a></div>
-		<div id="whoIsPlaying" style="position: absolute; top:10px; right : 10px; background-color:greenyellow;padding:15px; border-radius:5px; border: deeppink solid 2px;color:deeppink;"></div>
+		<h1>South Park memory game</h1>
+		<audio id="audio1" src="Sounds/alcohol.mp3" type="audio/mp3"></audio>
+		<audio id="audio2" src="Sounds/busdriver.mp3" type="audio/mp3"></audio>
+		<audio id="audio3" src="Sounds/cartman-going-home.mp3" type="audio/mp3"></audio>
+		<audio id="audio4" src="Sounds/cartman-wendy-bitch.mp3" type="audio/mp3"></audio>
+		<audio id="audio5" src="Sounds/garrison_fag.mp3" type="audio/mp3"></audio>
+		<audio id="audio6" src="Sounds/grampalazyass.mp3" type="audio/mp3"></audio>
+		<audio id="audio7" src="Sounds/killedkenny.mp3" type="audio/mp3"></audio>
+		<audio id="audio8" src="Sounds/timmy_note.mp3" type="audio/mp3"></audio>
 
-		<div class="container">
+		<div
+			id="buttonPlayIn"
+			style="position: absolute; top:10px; left : 10px; background-color:greenyellow;padding:15px; border-radius:5px; border: deeppink solid 2px;color:deeppink;"
+		>
+			<a href="#modal1" class="js-modal">Play in</a>
+		</div>
+		<div
+			id="whoIsPlaying"
+			style="text-align:center; position: absolute; top:110px; right : 10px; background-color:greenyellow;padding:15px; border-radius:5px; border: deeppink solid 2px;color:deeppink;"
+		>
+			It's<br />
+			<span style="font-size:30px">Player 1's</span><br />
+			turn
+		</div>
+		<div
+			id="ImageBurger"
+			style="text-align:center; position: absolute; top:10px; right : 10px; background-color:greenyellow;padding:10px; border-radius:5px; border: deeppink solid 2px;color:deeppink;"
+		>
+			<img id="open-modal" src="images/burger.png" width="50" style="cursor: pointer;" />
+		</div>
+
+		<div class="container slide-in-right">
 			<div id="Tableau_01">
 				<div id="id1_">
 					<img id="id1" src="images/1.gif" width="1200" height="69" alt="" />
@@ -43,8 +54,13 @@
 				<div id="id2_">
 					<img id="id2" src="images/2.gif" width="494" height="24" alt="" />
 				</div>
-				<div id="id3_">
-					<img id="id3" src="images/3.gif" width="116" height="107" alt="" />
+				<div id="container2">
+				<div id="id3_"> 
+					<img id="id3" src="images/canard_fond.gif" width="116" height="107" alt="" />
+				</div>
+				<div id="animate">
+					<img id="canard" src="images/canard.gif" width="116" height="107" alt="" />
+				</div>
 				</div>
 				<div id="id4_">
 					<img id="id4" src="images/4.gif" width="590" height="49" alt="" />
@@ -55,8 +71,10 @@
 				<div id="id6_">
 					<img id="id6" src="images/6.gif" width="285" height="195" alt="" />
 					<div class="countcontainer">
-						<p id="score1"></p> <!-- ------------------------------------AFFICHAGE SCORE 1-->
-						<p id="score2"></p> <!-- ------------------------------------AFFICHAGE SCORE 2-->
+						<p id="score1"></p>
+						<!-- ------------------------------------AFFICHAGE SCORE 1-->
+						<p id="score2"></p>
+						<!-- ------------------------------------AFFICHAGE SCORE 2-->
 					</div>
 				</div>
 				<div id="id7_">
@@ -213,40 +231,57 @@
 					<img id="id57" src="images/57.gif" width="84" height="32" alt="" />
 				</div>
 			</div>
-        </div>
-		
-
 		</div>
-<!--START SECTION MODAL-->
+
+		<!--START SECTION MODAL-->
 		<section class="sectionModal">
-        	<aside id ="modal1" class = "modal" aria-hidden = "true" role = "dialog" aria-labelledby="titleModal" style="display:none">
-                <div class = "modal-wrapper js-modal-stop">
+			<aside
+				id="modal1"
+				class="modal"
+				aria-hidden="true"
+				role="dialog"
+				aria-labelledby="titleModal"
+				style="display:none"
+			>
+				<div class="modal-wrapper js-modal-stop">
 					<div class="div_buttonClose">
 						<button class="js-modal-close buttonClose">X</button>
 					</div>
-                    <form method="POST" class="form_main">
+					<form method="POST" class="form_main">
 						<h1 class="form_h1">PLAYERS :</h1>
 						<div class="form_container">
 							<div class="form_player1">
-								<input class="input_user" type="text" name="player_name" placeholder="Player 1 :">
-								<div class= "div_fieldset">
+								<input
+									class="input_user"
+									type="text"
+									name="player_name"
+									id="name1"
+									placeholder="Player 1 :"
+								/>
+								<div class="div_fieldset">
 									<fieldset>
 										<legend>Your gender :</legend>
-										<input type="radio" name="user_sexe1" id="radio_m1">
+										<input type="radio" name="user_sexe1" id="radio_m1" />
 										<label for="radio_m1">m</label>
-										<input type="radio" name="user_sexe1" id="radio_f1">
+										<input type="radio" name="user_sexe1" id="radio_f1" />
 										<label for="radio_f1">f</label>
 									</fieldset>
 								</div>
 							</div>
 							<div class="form_player2">
-								<input class="input_user" type="text" name="player_name" placeholder="Player 2 :">
-								<div class= "div_fieldset">
+								<input
+									class="input_user"
+									type="text"
+									name="player_name"
+									id="name2"
+									placeholder="Player 2 :"
+								/>
+								<div class="div_fieldset">
 									<fieldset>
 										<legend>Your gender :</legend>
-										<input type="radio" name="user_sexe2" id="radio_m2">
+										<input type="radio" name="user_sexe2" id="radio_m2" />
 										<label for="radio_m2">m</label>
-										<input type="radio" name="user_sexe2" id="radio_f2">
+										<input type="radio" name="user_sexe2" id="radio_f2" />
 										<label for="radio_f2">f</label>
 									</fieldset>
 								</div>
@@ -254,16 +289,29 @@
 						</div>
 					</form>
 					<div class="div_buttonPlay">
-						<button class="button_play">Play</button>
-                	</div>
-                </div>
-        	</aside>
+						<button class="button_play" onclick="getInfos();">Play</button>
+					</div>
+				</div>
+			</aside>
 		</section>
-<!------------------------------------------------END SECTION MODAL------------------------------------------------>
+		<!------------------------------------------------END SECTION MODAL------------------------------------------------>
+		<div class="modal" id="burgerMenu">
+			<img
+				src="images/burger_confection.jpg"
+				width="400"
+				id="burgerMenuImage"
+				class="slide-in-right"
+			/><br /><br />
+			<button
+				id="close-modal"
+				style="cursor: pointer; top:10px; left : 10px; background-color:greenyellow;padding:15px; border-radius:5px; border: deeppink solid 2px;color:deeppink;"
+			>
+				Close Burger menu
+			</button>
+		</div>
 		<script type="text/javascript" src="count.js"></script>
 		<script src="audio.js" ></script>
-		<script src="modal.js">
-        
-        </script>
+		<script src="modal.js"></script>
+		<script src="animation.js" ></script>
 	</body>
 </html>

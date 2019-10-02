@@ -22,6 +22,7 @@ html {
 	height: 100%;
 	background: rgba(0, 0, 0, 0.7);
 	animation: fadeIn 0.5s both;
+	z-index: 10;
 }
 
 .modal-wrapper {
@@ -171,7 +172,9 @@ legend {
 	padding: 0;
 	text-align: center;
 }
-
+.open_modal {
+	cursor: pointer;
+}
 @media only screen and (max-width: 961px) {
 	.form_container {
 		display: flex;
