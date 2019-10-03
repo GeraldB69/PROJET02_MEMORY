@@ -3,8 +3,8 @@
 // }
 
 
-const clickDuck = document.getElementById("canard");
-clickDuck.addEventListener("click", shuffle(audios))
+// const clickDuck = document.getElementById("canard");
+// clickDuck.addEventListener("click", shuffle(audios))
 
 
 console.log(audios);
