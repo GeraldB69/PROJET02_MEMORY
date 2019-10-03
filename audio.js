@@ -93,8 +93,27 @@ for (let i = 0; i < idBonhommes.length; i++) {
 					player--;
 					console.log(idBonhommesFound);
 					if (idBonhommesFound.length === 16) {
-						console.log("gagné");
-						gagne();
+						console.log("1")
+						console.log(count1)
+						console.log(g1)
+						console.log(g2)
+					
+						if (count1 > count2 && g1 === "M"){
+							console.log("2")
+							gagneM();
+						}
+						else if (count1 > count2 && g1 === "W"){
+							console.log("3")
+							gagneW();
+						}
+						else if (count1 < count2 && g2 === "M"){
+							console.log("4")
+							gagneM();
+						}
+						else{
+							console.log("5")
+							gagneW();
+						}
 					}
 				}
 
@@ -122,6 +141,27 @@ function CompareCards(IDcarte1, IDcarte2) {
 	else return false;
 }
 
-function gagne() {
-	document.body.innerHTML = `<div style="with:100%; text-align:center; color:deeppink; font-size:80px; margin-top:50px;"><a href="index.html" style="text-decoration:none;  color:deeppink;">You WIN</a></div>`;
+function gagneM() {
+	document.body.innerHTML = `
+		<div class="divM">
+			<div class="divButM">
+				<button class="linkIM"><a class="aM" href="index.html">Play again</a></button>
+			</div>
+			<h1 class="titleM">Dude you're a WINNER !</h1>
+			<img class="imgM" src="Men.gif"/>
+			<p class="pM">You're so perfect ! Congratulations !</p>
+		</div>`;
+}
+
+
+function gagneW() {
+	document.body.innerHTML = `
+		<div class="divM">
+			<div class="divButM">
+				<button class="linkIM"><a class="aM" href="index.html">Replay</a></button>
+			</div>
+			<h1 class="titleM">Yes, you win !</h1>
+			<img class="imgM" src="Woman.gif"/>
+			<p class="pM">NOW lazy, go clean up !</p>
+		</div>`;
 }

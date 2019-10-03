@@ -1,30 +1,34 @@
 <!DOCTYPE html
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>South Park Memory</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="classroom.css" />
+		<link rel="stylesheet" type="text/css" href="count.css" />
+		<link rel="stylesheet" type="text/css" href="icon.css" />
+		<link rel="stylesheet" type="text/css" href="animation.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|Mansalva&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="modal.css" />
+		<link rel="stylesheet" href="modalW.css">
+		<link rel="stylesheet" href="modalM.css">
+		<link rel="stylesheet" href="innerMan.css">
 
-<head>
-	<title>South Park Memory</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="style.css" />
-	<link rel="stylesheet" type="text/css" href="classroom.css" />
-	<link rel="stylesheet" type="text/css" href="count.css" />
-	<link rel="stylesheet" type="text/css" href="icon.css" />
-	<link rel="stylesheet" type="text/css" href="animation.css" />
-	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|Mansalva&display=swap"
-		rel="stylesheet" />
-	<link rel="stylesheet" href="modal.css" />
-</head>
 
-<body>
-	<h1>South Park memory game</h1>
-	<audio id="audio1" src="Sounds/alcohol.mp3" type="audio/mp3"></audio>
-	<audio id="audio2" src="Sounds/busdriver.mp3" type="audio/mp3"></audio>
-	<audio id="audio3" src="Sounds/cartman-going-home.mp3" type="audio/mp3"></audio>
-	<audio id="audio4" src="Sounds/cartman-wendy-bitch.mp3" type="audio/mp3"></audio>
-	<audio id="audio5" src="Sounds/garrison_fag.mp3" type="audio/mp3"></audio>
-	<audio id="audio6" src="Sounds/grampalazyass.mp3" type="audio/mp3"></audio>
-	<audio id="audio7" src="Sounds/killedkenny.mp3" type="audio/mp3"></audio>
-	<audio id="audio8" src="Sounds/timmy_note.mp3" type="audio/mp3"></audio>
+	</head>
+	<body>
+		<h1>South Park memory game</h1>
+		<audio id="audio1" src="Sounds/alcohol.mp3" type="audio/mp3"></audio>
+		<audio id="audio2" src="Sounds/busdriver.mp3" type="audio/mp3"></audio>
+		<audio id="audio3" src="Sounds/cartman-going-home.mp3" type="audio/mp3"></audio>
+		<audio id="audio4" src="Sounds/cartman-wendy-bitch.mp3" type="audio/mp3"></audio>
+		<audio id="audio5" src="Sounds/garrison_fag.mp3" type="audio/mp3"></audio>
+		<audio id="audio6" src="Sounds/grampalazyass.mp3" type="audio/mp3"></audio>
+		<audio id="audio7" src="Sounds/killedkenny.mp3" type="audio/mp3"></audio>
+		<audio id="audio8" src="Sounds/timmy_note.mp3" type="audio/mp3"></audio>
 
 	<div id="buttonPlayIn"
 		style="position: absolute; top:10px; left : 10px; background-color:greenyellow;padding:15px; border-radius:5px; border: deeppink solid 2px;color:deeppink;">
@@ -227,10 +231,10 @@
 			</div>
 		</div>
 
-		<!--START SECTION MODAL-->
+		<!-- START SECTION MODAL -->
+
 		<section class="sectionModal">
-			<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titleModal"
-				style="display:none">
+			<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titleModal" style="display:none">
 				<div class="modal-wrapper js-modal-stop">
 					<div class="div_buttonClose">
 						<button class="js-modal-close buttonClose">X</button>
@@ -272,7 +276,12 @@
 				</div>
 			</aside>
 		</section>
-		<!------------------------------------------------END SECTION MODAL------------------------------------------------>
+
+		<!-- END SECTION MODAL -->
+
+		<!-- START SECTION BURGER -->
+
+
 		<div class="modal" id="burgerMenu">
 			<img src="images/burger_confection.jpg" width="400" id="burgerMenuImage"
 				class="slide-in-right" /><br /><br />
@@ -281,6 +290,13 @@
 				Close Burger menu
 			</button>
 		</div>
+
+		<!-- END SECTION BURGER -->
+
+
+
+
+
 		<script type="text/javascript" src="count.js"></script>
 		<script src="audio.js"></script>
 		<script src="modal.js"></script>
