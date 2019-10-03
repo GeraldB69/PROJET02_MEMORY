@@ -1,5 +1,5 @@
 /* curseur cible */
-#id3,.personnages {
+#id3, #idtest, #canard, .personnages {
     cursor: url(icon.ico) 32 32, pointer;
     caret-color: red;
 }

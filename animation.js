@@ -18,6 +18,6 @@ movingDuck.animate([
     { duration: 2000, iterations: 4});
 }
 
+setInterval(duck, 20000);
 
-setInterval(duck, 30000);
 
