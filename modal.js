@@ -69,7 +69,7 @@ function getInfos() {
 	gender(g1,g2);
   // CORRECTION BUG TABLEAU
   haveToPlay = document.getElementById("whoIsPlaying");
-	haveToPlay.innerHTML = `It's<br> <span style="font-size:30px">${name1}'s</span><br> turn`;
+	haveToPlay.innerHTML = `It's<br> <span style="font-size:20px">${name1}'s</span><br> turn`;
 
 }
 	
