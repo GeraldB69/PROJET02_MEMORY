@@ -29,7 +29,15 @@ function pointPlus2(match) {
 		countPlayer2.innerHTML = "Score <br>" + name2 + " : " + count2;
 	}
 
-	// --------------------------------------------- pour afficher le joueur qui doit jouer
+// --------------------------------------------- pour remettre le score à 0
+
+function resetMatch() {
+	countPlayer1.innerHTML = "Score <br>" + name1 + " : 0";
+	countPlayer2.innerHTML = "Score <br>" + name2 + " : 0";
+	}
+	
+
+// --------------------------------------------- pour afficher le joueur qui doit jouer
 	let haveToPlay = document.getElementById("whoIsPlaying");
 
 	function playerWhoHaveToPlay(player) {
