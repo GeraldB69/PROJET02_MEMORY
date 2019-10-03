@@ -19,15 +19,40 @@ countPlayer2.innerHTML = "Score <br>" + name2 + " : 0";
 count1 = 0;
 count2 = 0;
 
+
 function pointPlus1(match) {
+	// const gender = 'male';
+	if (g1 === 'M') {
+	count1 += 2;
+	countPlayer1.innerHTML = "Score <br>" + name1 + " : " + count1;
+	}
+	else {
 	count1 += 1;
 	countPlayer1.innerHTML = "Score <br>" + name1 + " : " + count1;
+	}
 }
 
 function pointPlus2(match) {
-	count2 += 1;
-		countPlayer2.innerHTML = "Score <br>" + name2 + " : " + count2;
+	// const gender = 'female';
+	if (g2 === 'M') {
+	count2 += 2;
+	countPlayer2.innerHTML = "Score <br>" + name2 + " : " + count2;
 	}
+	else {
+	count2 += 1;
+	countPlayer2.innerHTML = "Score <br>" + name2 + " : " + count2;
+	}
+}
+
+// function pointPlus1(match) {
+// 	count1 += 1;
+// 	countPlayer1.innerHTML = "Score <br>" + name1 + " : " + count1;
+// }
+
+// function pointPlus2(match) {
+// 	count2 += 1;
+// 		countPlayer2.innerHTML = "Score <br>" + name2 + " : " + count2;
+// 	}
 
 	// --------------------------------------------- pour afficher le joueur qui doit jouer
 	let haveToPlay = document.getElementById("whoIsPlaying");
@@ -36,8 +61,8 @@ function pointPlus2(match) {
 	console.log(`player : ${player}`);
 	
 	if (player % 2 === 0) {
-		haveToPlay.innerHTML = `It's<br> <span style="font-size:30px">${name1}'s</span><br> turn`;
+		haveToPlay.innerHTML = `It's<br> <span style="font-size:20px">${name1}'s</span><br> turn`;
 	} else {
-		haveToPlay.innerHTML = `It's<br> <span style="font-size:30px">${name2}'s</span><br> turn`;
+		haveToPlay.innerHTML = `It's<br> <span style="font-size:20px">${name2}'s</span><br> turn`;
 	}
 }
