@@ -50,6 +50,9 @@ document.querySelectorAll(".button_play").forEach((a) => {
 	a.addEventListener("click", closeModal);
 });
 
+let g1;
+let g2;
+
 function getInfos() {
 	// récupère les noms
 	name1 = document.getElementById("name1").value;
@@ -61,8 +64,8 @@ function getInfos() {
 	const f1 = document.getElementById("radio_f1").checked;
 	const m2 = document.getElementById("radio_m2").checked;
 	const f2 = document.getElementById("radio_f2").checked;
-	const g1 = m1 === true ? "M" : "F";
-	const g2 = m2 === true ? "M" : "F";
+	g1 = m1 === true ? "M" : "F";
+	g2 = m2 === true ? "M" : "F";
 	gender(g1,g2);
   // CORRECTION BUG TABLEAU
   haveToPlay = document.getElementById("whoIsPlaying");

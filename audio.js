@@ -102,11 +102,11 @@ for (let i = 0; i < idBonhommes.length; i++) {
 							console.log("2")
 							gagneM();
 						}
-						if (count1 > count2 && g1 === "W"){
+						else if (count1 > count2 && g1 === "W"){
 							console.log("3")
 							gagneW();
 						}
-						if (count1 < count2 && g2 === "M"){
+						else if (count1 < count2 && g2 === "M"){
 							console.log("4")
 							gagneM();
 						}

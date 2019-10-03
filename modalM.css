@@ -34,6 +34,7 @@ body, html {
     max-width: calc(100vw - 20px);
     max-height: calc(100vh - 20px);
     padding: 20px;
+    text-align: center;
     background-image: url("tableauNoir.jpg");
 	background-repeat: no-repeat;
     animation: slideFromTop .2s both;
@@ -57,4 +58,13 @@ body, html {
     justify-content: flex-end;
     align-items: center;
     width: 100%;
+}
+
+.buttonCloseJs {
+    text-align:center;
+    background-color:greenyellow;
+    border-radius:5px;
+    border: deeppink solid 2px;
+    color:deeppink;
+    padding: 2px;
 }
