@@ -142,24 +142,26 @@ function CompareCards(IDcarte1, IDcarte2) {
 }
 
 function gagneM() {
-	document.body.innerHTML = `  <div class="modalFirst modalStopPropagationJsM">
-	<div class="divButtonForFlex">
-		<button class="buttonCloseJs">X</button>
-	</div>
-	<h1 class="titleModal">Dude you're a WINNER !</h1>
-	<img src="Men.gif"/>
-	<p>You're so perfect ! Congratulations !</p>
-</div>`;
+	document.body.innerHTML = `
+		<div class="divM">
+			<div class="divButM">
+				<button class="linkIM"><a class="aM" href="index.html">Play again</a></button>
+			</div>
+			<h1 class="titleM">Dude you're a WINNER !</h1>
+			<img class="imgM" src="Men.gif"/>
+			<p class="pM">You're so perfect ! Congratulations !</p>
+		</div>`;
 }
 
 
 function gagneW() {
-	document.body.innerHTML = `  <div class="modalFirst modalStopPropagationJsW">
-	<div class="divButtonForFlex">
-		<button class="buttonCloseJs">X</button>
-	</div>
-	<h1 class="titleModal">Yes, you win !</h1>
-	<img src="Woman.gif"/>
-	<p>NOW lazy, go clean up !</p>
-</div>`;
+	document.body.innerHTML = `
+		<div class="divM">
+			<div class="divButM">
+				<button class="linkIM"><a class="aM" href="index.html">Replay</a></button>
+			</div>
+			<h1 class="titleM">Yes, you win !</h1>
+			<img class="imgM" src="Woman.gif"/>
+			<p class="pM">NOW lazy, go clean up !</p>
+		</div>`;
 }
