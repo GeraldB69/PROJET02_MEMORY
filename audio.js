@@ -38,9 +38,7 @@ function shuffle(array) {
 	return array;
 }
 
-shuffle(audios);
-
-
+//shuffle(audios);
 
 //console.log(audios);
 let idBonhommesFound = new Array();
@@ -71,12 +69,16 @@ let player = 1; // pour passer d'un joueur à l'autre
 
 for (let i = 0; i < idBonhommes.length; i++) {
 	const img = document.getElementById(idBonhommes[i]);
+	let cibleNoire = document.getElementById(`${idBonhommes[i]}_`);
+	let image = idBonhommes[i].slice(2);
+
 	img.addEventListener("click", function() {
 		audios[i].play();
 		console.log(audios[i].id);
 
 		if (idBonhommesPlayed != idBonhommes[i]) {
 			if (soundPlayed1 === 0) {
+				cibleNoire.innerHTML += `<img src="images/choice.png" id="cible" width="70" style="position:absolute;left:10%;top:15px; z-index:2;">`;
 				soundPlayed1 = audios[i].id;
 			} else if (soundPlayed2 === 0) {
 				soundPlayed2 = audios[i].id;
@@ -92,6 +94,7 @@ for (let i = 0; i < idBonhommes.length; i++) {
 					let BonhommesFounds = idBonhommesFound.push(idBonhommes[i]);
 					BonhommesFounds = idBonhommesFound.push(idBonhommesPlayed);
 					player--;
+
 					console.log(idBonhommesFound);
 					if (idBonhommesFound.length === 16) {
 						console.log("gagné");
@@ -113,6 +116,14 @@ for (let i = 0; i < idBonhommes.length; i++) {
 				player++;
 			}
 			idBonhommesPlayed = idBonhommes[i];
+			const myCible = document.getElementById("cible");
+			setTimeout(function() {
+				myCible.remove();
+			}, 4000);
+
+			// cibleNoire.addEventListener("click", function() {
+			// 	audios[i].play();
+			// });
 		}
 	});
 }
