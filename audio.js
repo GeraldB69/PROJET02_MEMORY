@@ -78,7 +78,7 @@ for (let i = 0; i < idBonhommes.length; i++) {
 
 		if (idBonhommesPlayed != idBonhommes[i]) {
 			if (soundPlayed1 === 0) {
-				cibleNoire.innerHTML += `<img src="images/choice.png" id="cible" width="70" style="position:absolute;left:10%;top:15px; z-index:2;">`;
+				cibleNoire.innerHTML += `<img src="images/choice.png" id="cible" width="70" style="position:absolute;left:10%;top:15px; z-index:4;">`;
 				soundPlayed1 = audios[i].id;
 			} else if (soundPlayed2 === 0) {
 				soundPlayed2 = audios[i].id;
