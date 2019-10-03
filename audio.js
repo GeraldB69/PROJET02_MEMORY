@@ -94,8 +94,27 @@ for (let i = 0; i < idBonhommes.length; i++) {
 					player--;
 					console.log(idBonhommesFound);
 					if (idBonhommesFound.length === 16) {
-						console.log("gagné");
-						gagne();
+						console.log("1")
+						console.log(count1)
+						console.log(g1)
+						console.log(g2)
+					
+						if (count1 > count2 && g1 === "M"){
+							console.log("2")
+							gagneM();
+						}
+						if (count1 > count2 && g1 === "W"){
+							console.log("3")
+							gagneW();
+						}
+						if (count1 < count2 && g2 === "M"){
+							console.log("4")
+							gagneM();
+						}
+						else{
+							console.log("5")
+							gagneW();
+						}
 					}
 				}
 
@@ -123,6 +142,25 @@ function CompareCards(IDcarte1, IDcarte2) {
 	else return false;
 }
 
-function gagne() {
-	document.body.innerHTML = `<div style="with:100%; text-align:center; color:deeppink; font-size:80px; margin-top:50px;"><a href="index.html" style="text-decoration:none;  color:deeppink;">You WIN</a></div>`;
+function gagneM() {
+	document.body.innerHTML = `  <div class="modalFirst modalStopPropagationJsM">
+	<div class="divButtonForFlex">
+		<button class="buttonCloseJs">X</button>
+	</div>
+	<h1 class="titleModal">Dude you're a WINNER !</h1>
+	<img src="Men.gif"/>
+	<p>You're so perfect ! Congratulations !</p>
+</div>`;
+}
+
+
+function gagneW() {
+	document.body.innerHTML = `  <div class="modalFirst modalStopPropagationJsW">
+	<div class="divButtonForFlex">
+		<button class="buttonCloseJs">X</button>
+	</div>
+	<h1 class="titleModal">Yes, you win !</h1>
+	<img src="Woman.gif"/>
+	<p>NOW lazy, go clean up !</p>
+</div>`;
 }
