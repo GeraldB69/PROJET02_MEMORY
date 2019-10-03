@@ -38,11 +38,10 @@ function shuffle(array) {
 	return array;
 }
 
-shuffle(audios);
+// DÉSACTIVÉ POUR LA PRÉSENTATION
+//shuffle(audios);
+//console.log(audios);
 
-
-
-console.log(audios);
 let idBonhommesFound = new Array();
 // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Tableau regroupant les <div> des bonhommes
 const idBonhommes = [
