@@ -1,35 +1,35 @@
-let modal = null
-const openModals = function (e) {
+let modal1 = null
+const openModals1 = function (e) {
     e.preventDefault()
     const target = document.querySelector(e.target.getAttribute("href"))
     target.style.display = null
-    modal = target
-    modal.addEventListener("click", closeModals)
-    modal.querySelector(".buttonCloseJsW").addEventListener("click", closeModals)
-    modal.querySelector(".modalStopPropagationJsW").addEventListener("click", stopPropagation)
+    modal1 = target
+    modal1.addEventListener("click", closeModals1)
+    modal1.querySelector(".buttonCloseJsW").addEventListener("click", closeModals1)
+    modal1.querySelector(".modalStopPropagationJsW").addEventListener("click", stopPropagation1)
 }
 
-const closeModals = function (e) {
-    if (modal === null) return
+const closeModals1 = function (e) {
+    if (modal1 === null) return
     e.preventDefault()
-    modal.style.display = "none"
-    modal.removeEventListener("click", closeModals)
-    modal.querySelector(".buttonCloseJs").removeEventListener("click", closeModals)
-    modal.querySelector(".modalStopPropagationJsW").removeEventListener("click", stopPropagation)
-    modal = null
+    modal1.style.display = "none"
+    modal1.removeEventListener("click", closeModals1)
+    modal1.querySelector(".buttonCloseJs").removeEventListener("click", closeModals1)
+    modal1.querySelector(".modalStopPropagationJsW").removeEventListener("click", stopPropagation1)
+    modal1 = null
 }
 
-const stopPropagation = function (e) {
-    e.stopPropagation()
+const stopPropagation1 = function (e) {
+    e.stopPropagation1()
 }
 
 
 document.querySelectorAll(".linkModalJsW").forEach(a => {
-    a.addEventListener("click", openModals)
+    a.addEventListener("click", openModals1)
 })
 
 window.addEventListener("keydown", function (e) {
     if(e.key === "Escape") {
-        closeModals(e)
+        closeModals1(e)
     }
 })
