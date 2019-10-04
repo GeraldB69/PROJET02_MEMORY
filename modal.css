@@ -26,9 +26,8 @@ html {
 }
 
 .modal-wrapper {
-	overflow: auto;
-	width: 80%;
-	height: 2000px;
+	width: 60%;
+	height: 500px;
 	max-width: calc(100vw - 20px);
 	max-height: calc(100vh - 20px);
 	background-image: url("tableauNoir.jpg");
@@ -97,7 +96,7 @@ html {
 
 .form_h1 {
 	width: 100%;
-	height: 100px;
+	height: 80px;
 }
 
 .form_container {
@@ -108,11 +107,11 @@ html {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	height: 300px;
+	height: 280px;
 }
 
 .button_play {
-	height: 50px;
+	height: 40px;
 	width: 20%;
 	margin-bottom: 60px;
 	background-color: #cd6a1c;
@@ -124,7 +123,7 @@ html {
 
 .div_buttonPlay {
 	width: 100%;
-	height: 100px;
+	height: 70px;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -140,13 +139,13 @@ html {
 	margin: 0;
 	padding: 0;
 	width: 50%;
-	height: 300px;
+	height: 250px;
 }
 
 .div_fieldset {
 	text-align: center;
 	width: 310px;
-	height: 200px;
+	height: 150px;
 	margin-top: 20px;
 }
 
