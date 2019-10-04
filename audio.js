@@ -83,7 +83,7 @@ for (let i = 0; i < idBonhommes.length; i++) {
 				img.src = "images/choice.png";
 				img.id = "cible";
 				img.style = "position:absolute;left:10%;top:15px; z-index:4;";
-				img.width = "70";
+				img.width = "50";
 				cibleNoire.appendChild(img);
 				// cibleNoire.innerHTML += `<img src="images/choice.png" id="cible" width="70" style="position:absolute;left:10%;top:15px; z-index:4;">`;
 				soundPlayed1 = audios[i].id;
@@ -95,7 +95,11 @@ for (let i = 0; i < idBonhommes.length; i++) {
 				if (CompareCards(soundPlayed1, soundPlayed2) === true) {
 					if (player % 2 != 0) {
 						pointPlus1(CompareCards(soundPlayed1, soundPlayed2));
-					} else pointPlus2(CompareCards(soundPlayed1, soundPlayed2));
+						bienJoue();
+					} else {
+						pointPlus2(CompareCards(soundPlayed1, soundPlayed2));
+						bienJoue();
+					}
 
 					//console.log(idBonhommesPlayed);
 					idBonhommesFound.push(idBonhommes[i]);
@@ -142,7 +146,7 @@ for (let i = 0; i < idBonhommes.length; i++) {
 			const myCible = document.getElementById("cible");
 			setTimeout(function() {
 				myCible.remove();
-			}, 5000);
+			}, 6000);
 
 			// cibleNoire.addEventListener("click", function() {
 			// 	audios[i].play();
@@ -179,4 +183,19 @@ function gagneW() {
 			<img class="imgM" src="Woman.gif"/>
 			<p class="pM">NOW lazy, go clean up !</p>
 		</div>`;
+}
+
+function bienJoue() {
+	const aPoil = document.createElement("img");
+	aPoil.src = "images/pointPlus.png";
+	aPoil.id = "pointPlusimg";
+	aPoil.style = "position:absolute;left:15%;top:80px; z-index:4; ";
+	aPoil.width = "1000";
+	aPoil.className = "slide-in-right";
+	document.body.appendChild(aPoil);
+
+	const bonhommeAPoil = document.getElementById("pointPlusimg");
+	setTimeout(function() {
+		bonhommeAPoil.remove();
+	}, 2000);
 }
