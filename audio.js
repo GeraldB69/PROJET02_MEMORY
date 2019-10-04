@@ -70,12 +70,22 @@ let player = 1; // pour passer d'un joueur à l'autre
 
 for (let i = 0; i < idBonhommes.length; i++) {
 	const img = document.getElementById(idBonhommes[i]);
+	let cibleNoire = document.getElementById(`${idBonhommes[i]}_`);
+	let image = idBonhommes[i].slice(2);
+
 	img.addEventListener("click", function() {
 		audios[i].play();
-		console.log(audios[i].id);
+		console.log("youpi", audios[i].id);
 
 		if (idBonhommesPlayed != idBonhommes[i]) {
 			if (soundPlayed1 === 0) {
+				var img = document.createElement("img");
+				img.src = "images/choice.png";
+				img.id = "cible";
+				img.style = "position:absolute;left:10%;top:15px; z-index:4;";
+				img.width = "70";
+				cibleNoire.appendChild(img);
+				// cibleNoire.innerHTML += `<img src="images/choice.png" id="cible" width="70" style="position:absolute;left:10%;top:15px; z-index:4;">`;
 				soundPlayed1 = audios[i].id;
 			} else if (soundPlayed2 === 0) {
 				soundPlayed2 = audios[i].id;
@@ -88,30 +98,28 @@ for (let i = 0; i < idBonhommes.length; i++) {
 					} else pointPlus2(CompareCards(soundPlayed1, soundPlayed2));
 
 					//console.log(idBonhommesPlayed);
-					let BonhommesFounds = idBonhommesFound.push(idBonhommes[i]);
-					BonhommesFounds = idBonhommesFound.push(idBonhommesPlayed);
+					idBonhommesFound.push(idBonhommes[i]);
+					idBonhommesFound.push(idBonhommesPlayed);
 					player--;
+
 					console.log(idBonhommesFound);
 					if (idBonhommesFound.length === 16) {
-						console.log("1")
-						console.log(count1)
-						console.log(g1)
-						console.log(g2)
-					
-						if (count1 > count2 && g1 === "M"){
-							console.log("2")
+						console.log("1");
+						console.log(count1);
+						console.log(g1);
+						console.log(g2);
+
+						if (count1 > count2 && g1 === "M") {
+							console.log("2");
 							gagneM();
-						}
-						else if (count1 > count2 && g1 === "W"){
-							console.log("3")
+						} else if (count1 > count2 && g1 === "W") {
+							console.log("3");
 							gagneW();
-						}
-						else if (count1 < count2 && g2 === "M"){
-							console.log("4")
+						} else if (count1 < count2 && g2 === "M") {
+							console.log("4");
 							gagneM();
-						}
-						else{
-							console.log("5")
+						} else {
+							console.log("5");
 							gagneW();
 						}
 					}
@@ -131,6 +139,14 @@ for (let i = 0; i < idBonhommes.length; i++) {
 				player++;
 			}
 			idBonhommesPlayed = idBonhommes[i];
+			const myCible = document.getElementById("cible");
+			setTimeout(function() {
+				myCible.remove();
+			}, 5000);
+
+			// cibleNoire.addEventListener("click", function() {
+			// 	audios[i].play();
+			// });
 		}
 	});
 }
@@ -152,7 +168,6 @@ function gagneM() {
 			<p class="pM">You're so perfect ! Congratulations !</p>
 		</div>`;
 }
-
 
 function gagneW() {
 	document.body.innerHTML = `
