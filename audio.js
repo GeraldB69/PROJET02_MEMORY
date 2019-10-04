@@ -70,12 +70,22 @@ let player = 1; // pour passer d'un joueur à l'autre
 
 for (let i = 0; i < idBonhommes.length; i++) {
 	const img = document.getElementById(idBonhommes[i]);
+	let cibleNoire = document.getElementById(`${idBonhommes[i]}_`);
+	let image = idBonhommes[i].slice(2);
+
 	img.addEventListener("click", function() {
 		audios[i].play();
-		console.log(audios[i].id);
+		console.log("youpi", audios[i].id);
 
 		if (idBonhommesPlayed != idBonhommes[i]) {
 			if (soundPlayed1 === 0) {
+				var img = document.createElement("img");
+				img.src = "images/choice.png";
+				img.id = "cible";
+				img.style = "position:absolute;left:10%;top:15px; z-index:4;";
+				img.width = "70";
+				cibleNoire.appendChild(img);
+				// cibleNoire.innerHTML += `<img src="images/choice.png" id="cible" width="70" style="position:absolute;left:10%;top:15px; z-index:4;">`;
 				soundPlayed1 = audios[i].id;
 			} else if (soundPlayed2 === 0) {
 				soundPlayed2 = audios[i].id;
@@ -88,13 +98,30 @@ for (let i = 0; i < idBonhommes.length; i++) {
 					} else pointPlus2(CompareCards(soundPlayed1, soundPlayed2));
 
 					//console.log(idBonhommesPlayed);
-					let BonhommesFounds = idBonhommesFound.push(idBonhommes[i]);
-					BonhommesFounds = idBonhommesFound.push(idBonhommesPlayed);
+					idBonhommesFound.push(idBonhommes[i]);
+					idBonhommesFound.push(idBonhommesPlayed);
 					player--;
+
 					console.log(idBonhommesFound);
 					if (idBonhommesFound.length === 16) {
-						console.log("gagné");
-						gagne();
+						console.log("1");
+						console.log(count1);
+						console.log(g1);
+						console.log(g2);
+
+						if (count1 > count2 && g1 === "M") {
+							console.log("2");
+							gagneM();
+						} else if (count1 > count2 && g1 === "W") {
+							console.log("3");
+							gagneW();
+						} else if (count1 < count2 && g2 === "M") {
+							console.log("4");
+							gagneM();
+						} else {
+							console.log("5");
+							gagneW();
+						}
 					}
 				}
 
@@ -112,6 +139,14 @@ for (let i = 0; i < idBonhommes.length; i++) {
 				player++;
 			}
 			idBonhommesPlayed = idBonhommes[i];
+			const myCible = document.getElementById("cible");
+			setTimeout(function() {
+				myCible.remove();
+			}, 5000);
+
+			// cibleNoire.addEventListener("click", function() {
+			// 	audios[i].play();
+			// });
 		}
 	});
 }
@@ -122,6 +157,26 @@ function CompareCards(IDcarte1, IDcarte2) {
 	else return false;
 }
 
-function gagne() {
-	document.body.innerHTML = `<div style="with:100%; text-align:center; color:deeppink; font-size:80px; margin-top:50px;"><a href="index.html" style="text-decoration:none;  color:deeppink;">You WIN</a></div>`;
+function gagneM() {
+	document.body.innerHTML = `
+		<div class="divM">
+			<div class="divButM">
+				<button class="linkIM"><a class="aM" href="index.html">Play again</a></button>
+			</div>
+			<h1 class="titleM">Dude you're a WINNER !</h1>
+			<img class="imgM" src="Men.gif"/>
+			<p class="pM">You're so perfect ! Congratulations !</p>
+		</div>`;
+}
+
+function gagneW() {
+	document.body.innerHTML = `
+		<div class="divM">
+			<div class="divButM">
+				<button class="linkIM"><a class="aM" href="index.html">Replay</a></button>
+			</div>
+			<h1 class="titleM">Yes, you win !</h1>
+			<img class="imgM" src="Woman.gif"/>
+			<p class="pM">NOW lazy, go clean up !</p>
+		</div>`;
 }
