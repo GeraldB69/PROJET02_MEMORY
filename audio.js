@@ -74,11 +74,17 @@ for (let i = 0; i < idBonhommes.length; i++) {
 
 	img.addEventListener("click", function() {
 		audios[i].play();
-		console.log(audios[i].id);
+		console.log("youpi", audios[i].id);
 
 		if (idBonhommesPlayed != idBonhommes[i]) {
 			if (soundPlayed1 === 0) {
-				cibleNoire.innerHTML += `<img src="images/choice.png" id="cible" width="70" style="position:absolute;left:10%;top:15px; z-index:4;">`;
+				var img = document.createElement("img");
+				img.src = "images/choice.png";
+				img.id = "cible";
+				img.style = "position:absolute;left:10%;top:15px; z-index:4;";
+				img.width = "70";
+				cibleNoire.appendChild(img);
+				// cibleNoire.innerHTML += `<img src="images/choice.png" id="cible" width="70" style="position:absolute;left:10%;top:15px; z-index:4;">`;
 				soundPlayed1 = audios[i].id;
 			} else if (soundPlayed2 === 0) {
 				soundPlayed2 = audios[i].id;
@@ -91,8 +97,8 @@ for (let i = 0; i < idBonhommes.length; i++) {
 					} else pointPlus2(CompareCards(soundPlayed1, soundPlayed2));
 
 					//console.log(idBonhommesPlayed);
-					let BonhommesFounds = idBonhommesFound.push(idBonhommes[i]);
-					BonhommesFounds = idBonhommesFound.push(idBonhommesPlayed);
+					idBonhommesFound.push(idBonhommes[i]);
+					idBonhommesFound.push(idBonhommesPlayed);
 					player--;
 
 					console.log(idBonhommesFound);
@@ -119,7 +125,7 @@ for (let i = 0; i < idBonhommes.length; i++) {
 			const myCible = document.getElementById("cible");
 			setTimeout(function() {
 				myCible.remove();
-			}, 4000);
+			}, 5000);
 
 			// cibleNoire.addEventListener("click", function() {
 			// 	audios[i].play();
