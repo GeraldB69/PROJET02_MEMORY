@@ -1,5 +1,4 @@
 const names = [];
-const genders = [];
 let modal = null;
 
 const openModal = function(e) {
@@ -42,6 +41,7 @@ window.addEventListener("keydown", function(e) {
 window.addEventListener("keydown", function(e) {
 	play = document.querySelectorAll(".button_play");
 	if (e.key === "Enter") {
+		getInfos();
 		closeModal(e);
 	}
 });
@@ -50,12 +50,29 @@ document.querySelectorAll(".button_play").forEach((a) => {
 	a.addEventListener("click", closeModal);
 });
 
-function getInfos() {
-	let name1 = document.getElementById("name1").value;
-	let name2 = document.getElementById("name2").value;
+let g1;
+let g2;
 
-	putNames(name1, name2);
+function getInfos() {
+	// récupère les noms
+	name1 = document.getElementById("name1").value;
+	name2 = document.getElementById("name2").value;
+	// mise à jour des noms sur le tableau
+	putNames(name1, name2); 
+	// récupère les genres des 2 joueurs
+	const m1 = document.getElementById("radio_m1").checked;
+	const f1 = document.getElementById("radio_f1").checked;
+	const m2 = document.getElementById("radio_m2").checked;
+	const f2 = document.getElementById("radio_f2").checked;
+	g1 = m1 === true ? "M" : "F";
+	g2 = m2 === true ? "M" : "F";
+	gender(g1,g2);
+  // CORRECTION BUG TABLEAU
+  haveToPlay = document.getElementById("whoIsPlaying");
+	haveToPlay.innerHTML = `It's<br> <span style="font-size:20px">${name1}'s</span><br> turn`;
+
 }
+	
 // ---------------------------------- modale burger
 
 document.getElementById("open-modal").addEventListener("click", () => {
