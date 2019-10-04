@@ -59,6 +59,8 @@ function pointPlus2(match) {
 function resetMatch() {
 	countPlayer1.innerHTML = "Score <br>" + name1 + " : 0";
 	countPlayer2.innerHTML = "Score <br>" + name2 + " : 0";
+	count1 = 0;
+	count2 = 0;
 	}
 	
 
